@@ -11,7 +11,12 @@ import javax.swing.JFileChooser;
 
 public class Run {
 	public static void main(String[] args) throws IOException {
-		
+		String reguex = "\b|\t|(\b)+";
+		String s = "a b  c	d";
+		String[] as = s.split(" +|\t");
+		for(String bs:as){
+			System.out.println(bs);
+		}
 	}
 
 }
