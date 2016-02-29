@@ -195,6 +195,7 @@ public class Snake {
 		}
 		return true;
 	}
+
     public boolean isDead(){
     	int L = snake.size();
     	if(L == 1)
