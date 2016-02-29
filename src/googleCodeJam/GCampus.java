@@ -12,6 +12,8 @@ public class GCampus {
 		gc.solve();
 		
 	}
+	void test(track tr){
+	}
 	public void solve() throws IOException{
 		String inputFile = Tools.chooseFile();
 		String outputFile = Tools.getOutputName(inputFile);
@@ -44,6 +46,7 @@ public class GCampus {
 				Nr[n1].add(m);
 				Nr[n2].add(m);
 			}
+
 			System.out.println("Solving case "+ caseN + "...");
 			track tr = new track(N,M,roads,Nr);
 			String output = "Case #" + caseN + ":" + tr.getInefficient();
@@ -83,6 +86,9 @@ class track{
 				minTime = -1L;
 				//System.out.println("calculating for (" +n1 +"," + n2 +")");
 				LinkedList<direction> drs = getShortestTrack(n1,n2,ontrack0,visitedN,0L);
+				if(n1==69 && n2==72){
+					System.out.println(drs.get(0).time);
+				}
 				if(drs.size()==0) return "";
 				for(direction dr:drs){
 					for(Integer in:dr.dc){

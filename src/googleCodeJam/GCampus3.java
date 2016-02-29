@@ -14,6 +14,10 @@
 			GCampus3 gc = new GCampus3();
 			gc.solve();
 		}
+		void test(){
+			findShortestTime(0,1);
+			printPrevious();
+		}
 		public void solve() throws IOException{
 			String inputFile = Tools.chooseFile();
 			String outputFile = Tools.getOutputName(inputFile);
@@ -50,8 +54,16 @@
 					rooms[n1].cCampus.add(n2);
 					rooms[n2].cCampus.add(n1);
 				}
-				//track tr = new track(N,M,roads,Nr);
-				//printMap();
+				/*for(int i=0;i<N;i++)
+					cRoadsSort(rooms[i]);*/
+				/*if(caseN == 1) {
+					printMap();
+					return;
+				}*/
+				/*if(caseN==1){
+					test();
+					return;
+				}*/
 				String output = "Case #" + caseN + ":" + getInefficient();
 				System.out.println(output);
 				out.println(output);
@@ -59,7 +71,29 @@
 			in.close();
 			out.close();
 		}
-		public void findShortestTime(int n1,int n2){//start from n1
+		void cRoadsSort(Campus c){//sort cRoads
+			int Mi = c.cRoads.size();
+			int[] tempRoads = new int[Mi];
+			for(int i= 0;i<Mi;i++)
+				tempRoads[i] = c.cRoads.get(i);
+			c.cRoads.clear();
+			c.cCampus.clear();
+			for(int i=0;i<Mi-1;i++){
+				for(int j=i+1;j<Mi;j++){
+					int mi = tempRoads[i];
+					int mj = tempRoads[j];
+					if(roads[mi][2] > roads[mj][2]){
+						tempRoads[i] = mj;
+						tempRoads[j] = mi;
+					}
+				}
+			}
+			for(int i=0;i<Mi;i++){
+				c.cRoads.add(tempRoads[i]);
+				c.cCampus.add(cCampus(c.n,tempRoads[i]));
+			}
+		}
+		/*public void findShortestTime(int n1,int n2){//start from n1
 			Campus c1 = rooms[n1];
 			if(c1.sT == -1L){//starting point
 				c1.sT = 0;
@@ -89,6 +123,57 @@
 				if(n==n2 || rooms[n].out) continue;//end point
 				findShortestTime(n,n2);
 			}
+		}*/
+		public void findShortestTime(int n1,int n2){//start from n1
+			Campus c1 = rooms[n1];
+			if(c1.sT == -1L){//starting point
+				c1.sT = 0;
+			}
+			long sc = c1.sT;
+			c1.out = true;
+			if(n1 == n2)
+				return;
+			for(int i=0;i<c1.cRoads.size();i++){
+				int m = c1.cRoads.get(i);//
+				long tc1c = roads[m][2];//time required
+				Campus c = rooms[c1.cCampus.get(i)];//connected to c1
+				if(c.out)
+					continue;//no need to consider out campus
+				if(c.sT < 0){
+					c.sT = sc + tc1c;
+					c.previous.add(m);//road
+				}else if(c.sT > sc + tc1c){
+					c.sT = sc + tc1c;
+					c.previous.clear();
+					c.previous.add(m);//add new previous
+				}else if(c.sT == sc + tc1c){
+					c.previous.add(m);//two roads leads to c 
+				}
+			}
+			int n = getShortestUnvisited();
+			while(n==-1)
+				n = getShortestUnvisited();
+			findShortestTime(n,n2);
+			
+		}
+		int getShortestUnvisited(){
+			int n = -1;
+			long time = -1;
+			for(int i=0;i<rooms.length;i++){
+				if(rooms[i].out || rooms[i].sT == -1)
+					continue;
+				if(time == -1){
+					n = i;
+					time = rooms[i].sT;
+				}else if(time > rooms[i].sT){
+					time = rooms[i].sT;
+					n = i;
+				}
+			}
+			return n;
+		}
+		int cCampus(int n,int m){
+			return roads[m][0] + roads[m][1] - n;
 		}
 		public String getInefficient(){
 			int M = roads.length;
@@ -107,9 +192,23 @@
 					//printPrevious();
 					//
 					//printPrevious();
+					/*if(n1==0 && n2==2){
+						printMap();
+						printPrevious();
+					}*/
+					/*for(int n=0;n<N;n++){
+						for(int p:rooms[n].previous){
+							if(p==77){
+								System.out.println("n1="+n1+",n2="+n2);
+							}
+					}
+						//printPrevious();
+					}*/
 					for(int n=0;n<rooms.length;n++)
 						rooms[n].out = false;
+					//System.out.println("n1="+n1+",n2="+n2);
 					getTrack(n1,n2);
+					//System.out.println();
 				}
 			}
 			for(int m=0;m<M;m++){
@@ -130,6 +229,8 @@
 			for(int i=0;i<c2.previous.size();i++){
 				int m = c2.previous.get(i);
 				int n = roads[m][0] + roads[m][1] - n2;
+				//System.out.print("road:"+m+" to " +n +"->");
+				//System.out.println("m="+m+",n="+n +",n2="+n2);
 				if(rooms[n].out)
 					continue;
 				getTrack(n1,n);
@@ -140,10 +241,20 @@
 			String pre = "";
 			for(Campus c:rooms){
 				pre = "rooms " + c.n+":";
-				for(int i:c.previous)
-					pre = pre + i + ",";
+				for(int i:c.previous){
+					int n = roads[i][0] + roads[i][1] - c.n;
+					pre = pre + i + ":"+n+",";
+				}
 				System.out.println(pre);
 			}
+		}
+		public void printStatus(){
+			String output = "";
+			for(int i=0;i<rooms.length;i++){
+				output = "rooms " + i + ","+ rooms[i].out + "," + rooms[i].sT;
+				System.out.println(output);
+			}
+			
 		}
 		public void printMap(){
 			String output = "";
@@ -152,6 +263,10 @@
 				Campus ri = rooms[i];
 				for(int m:ri.cRoads){
 					output += m + ",";
+				}
+				output = output + "\n";
+				for(int m:ri.cRoads){
+					output += roads[m][2] + ",";
 				}
 				output = output + "\n";
 				for(int n:ri.cCampus){
@@ -171,5 +286,6 @@ class Campus{
 	Campus(int n1){
 		n = n1;
 	}
+
 }
 
