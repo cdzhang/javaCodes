@@ -79,14 +79,6 @@ public class Bike {
 				long Q = Integer.parseInt(pqs[1]);
 				PQ[m][0] = P;
 				PQ[m][1] = Q;
-				/*if(getRatio(P,Q)){
-					output = output + "Yes";
-				}else{
-					output = output + "No";
-				}
-				if(m!=M-1){
-					output = output+"\n";
-				}*/
 			}
 			boolean[] pq = getRatio();
 			for(int m=0;m<M;m++){

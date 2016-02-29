@@ -1,1 +1,7 @@
 When calculate long precisely, Math.pow is not a good method.
+
+for(i=0;i<N;i++)
+   int ai = A[i];
+   for(j=0;j<M;j++){
+      //change ai here may cause unwanted results
+   }
