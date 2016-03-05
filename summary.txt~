@@ -10,5 +10,3 @@ for(i=0;i<N;i++){
 Get the last M elements from an array a, if a.length < M, get them all
 
 Collections.sort();
-If I don't know where goes wrong, read line by line is one method to find the bug
-
