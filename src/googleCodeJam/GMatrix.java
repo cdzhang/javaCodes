@@ -10,6 +10,7 @@ import java.util.LinkedList;
 public class GMatrix {
 	LinkedList<E> matrix = new LinkedList<E>();
 	int N,K,X,C;
+	boolean[][] v;
 	public static void main(String[] args) throws IOException {
 		GMatrix t = new GMatrix();
 		t.solve();
@@ -28,6 +29,12 @@ public class GMatrix {
 			K = NKCX[1];
 			C = NKCX[2];
 			X = NKCX[3];
+			v = new boolean[N][N];
+			/*for(int i=0;i<N;i++){
+				for(int j=0;j<N;j++){
+					v[i][j] = false;
+				}
+			}*/
 			int[] A = Tools.intArray(in.readLine(), " ");
 			int[] B = Tools.intArray(in.readLine(), " ");
 			for(int i=1;i<=N;i++){
@@ -55,16 +62,21 @@ public class GMatrix {
 			int imax = Math.min(e1.i,N-K+1);
 			int jmin = Math.max(1,e1.j-K+1);
 			int jmax = Math.min(e1.j, N-K+1);
+			int countn = 0;
 			for(int i=imin;i<=imax;i++){
 				for(int j=jmin;j<=jmax;j++){
-					if(!hasLarger(i,j,n)){
-						sum += e1.x;
-						countM++;
-						if(countM == totalM)
-							return sum;
+					if(!v[i-1][j-1]){
+						countn++;
+						v[i-1][j-1] = true;
+
 					}
 				}
 			}
+			sum += countn*e1.x;
+			countM += countn;
+			if(countM == totalM)
+				return sum;
+			
 		}
 		return 0;
 	}

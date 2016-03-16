@@ -11,7 +11,6 @@ public class GGame2 {
 	int N, M;
 	int[] Q;
 	String st;
-	//LinkedList<Elf2> snt = new LinkedList<Elf2>();
 	LinkedList<Elf2> elves = new LinkedList<Elf2>();
 	public static void main(String[] args) throws IOException {
 		GGame2 t = new GGame2();

@@ -39,4 +39,34 @@ public class Tools {
 			a[n] = Long.parseLong(ss[n]);
 		return a;
 	}
+	public static void print(Object o){
+		System.out.print(o.toString());
+	}
+	public static void println(Object o){
+		System.out.println(o.toString());
+	}
+	public static void println(){
+		System.out.println();
+	}
+	public static void print(Object[][] oA){
+		for(Object[] ob:oA){
+			for(Object o:ob)
+				print(o+" ");
+			println();
+		}
+	}
+	public static void print(int[][] N){
+		for(int[] n:N){
+			for(int i:n)
+				print(i+" ");
+			println();
+		}
+	}
+	public static void print(int[] N){
+		print("[");
+		for(int n:N){
+			print(n+",");
+		}
+		println("]");
+	}
 }
