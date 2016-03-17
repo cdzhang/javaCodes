@@ -1,4 +1,4 @@
-package codeJame2015;
+package practice;
 
 import java.io.File;
 import java.io.IOException;
@@ -68,27 +68,5 @@ public class Tools {
 			print(n+",");
 		}
 		println("]");
-	}
-	public static long gcd(long a, long b){
-		long c = a % b;
-		if(c==0)
-			return b;
-		else
-			return gcd(b,c);
-	}
-	public static int gcd(int a, int b){
-		int c = a % b;
-		if(c==0)
-			return b;
-		else
-			return gcd(b,c);
-	}
-	public static long mul(long a,long b){
-		long c = gcd(a,b);
-		return a * b / c;
-	}
-	public static int mul(int a,int b){
-		int c = gcd(a,b);
-		return a * b / c;
 	}
 }
