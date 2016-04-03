@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class IPAddress {
 	int N;
 	LinkedList<IP> ips = new LinkedList<IP>();

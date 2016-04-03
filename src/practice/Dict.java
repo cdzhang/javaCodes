@@ -1,5 +1,7 @@
 package practice;
 
+import tools.Tools;
+
 public class Dict {
 	public static void main(String[] args){
 		Dict d = new Dict();

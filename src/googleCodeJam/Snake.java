@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class Snake {
 	//take care if the snake is on one line, next food?
 	//if after the turn has done

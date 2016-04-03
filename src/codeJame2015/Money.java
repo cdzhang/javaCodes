@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import tools.Tools;
+
 public class Money {
 	long[] deno;
 	long C, D, V;

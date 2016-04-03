@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Random;
 
+import tools.Tools;
+
 public class Charging {
 	long[] power2 = new long[42];
 	int N,L;

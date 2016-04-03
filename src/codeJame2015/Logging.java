@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class Logging {
 	int N;
 	int[] X,Y;

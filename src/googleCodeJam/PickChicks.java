@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import tools.Tools;
+
 public class PickChicks {
 	public static void main(String[] arg) throws IOException{
 		PickChicks pc = new PickChicks();

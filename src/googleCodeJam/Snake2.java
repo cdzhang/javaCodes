@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
+import tools.Tools;
+
 public class Snake2 {
 	//take care if the snake is on one line, next food?
 	//if after the turn has done

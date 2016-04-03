@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class GGame3 {
 	int N, M;
 	int[] Q;

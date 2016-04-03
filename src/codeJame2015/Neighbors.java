@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import tools.Tools;
+
 public class Neighbors {
 	int N,R,C;
 	public static void main(String[] args) throws IOException {

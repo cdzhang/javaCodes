@@ -3,6 +3,8 @@ package practice;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import tools.Tools;
+
 public class ShortestPath {
 	public static void main(String[] arg){
 		String[] s = {

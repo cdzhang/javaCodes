@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class GRanks {
 	LinkedList<Athlete> athletes = new LinkedList<Athlete>();
 	int[] S;

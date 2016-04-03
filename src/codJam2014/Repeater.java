@@ -7,7 +7,8 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import codeJame2015.Tools;
+import tools.Tools;
+
 
 public class Repeater {
 	int N;

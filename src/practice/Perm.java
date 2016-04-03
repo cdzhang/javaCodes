@@ -1,5 +1,7 @@
 package practice;
 
+import tools.Tools;
+
 public class Perm {
 	int n = 5;
 	boolean[] used = new boolean[n];

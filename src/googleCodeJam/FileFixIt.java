@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class FileFixIt {
 	String name; //the name of this directory
 	LinkedList<FileFixIt> subDirs = new LinkedList<FileFixIt>();

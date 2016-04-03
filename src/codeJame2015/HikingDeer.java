@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
+import tools.Tools;
+
 public class HikingDeer {
 	double err = 1e-7;
 	int N,totalH;

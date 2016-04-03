@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
+import tools.Tools;
+
 public class Permutation {
 	int[][] permGood;
 	int[][] permBad;

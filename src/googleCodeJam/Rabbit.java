@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class Rabbit {
 	int G,W,H,B,X;
 	long D;

@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
+
+import tools.Tools;
 /*
  * because x^x = x^x, x^y=y^x
  * a^b^c^d = K <=>

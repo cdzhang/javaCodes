@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 
+import tools.Tools;
+
 public class Albocede {
 	char[] S;
 	long mod = 1000000007;

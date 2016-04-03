@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import tools.Tools;
+
 public class ReverseWords{
 	public static void main(String[] args) throws IOException{
 		ReverseWords rw = new ReverseWords();

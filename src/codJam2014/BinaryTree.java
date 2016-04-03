@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
+import tools.Tools;
+
 public class BinaryTree {
 	Node[] nodes;
 	int N;

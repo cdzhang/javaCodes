@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class GGames {
 	int N, M;
 	LinkedList<Elf> snt = new LinkedList<Elf>();

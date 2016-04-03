@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
+import tools.Tools;
+
 public class GNumber {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub

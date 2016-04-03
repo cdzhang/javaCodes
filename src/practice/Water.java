@@ -2,6 +2,8 @@ package practice;
 
 import java.util.Scanner;
 
+import tools.Tools;
+
 public class Water {
 	public static void main(String[] arg){
 		Water w = new Water();

@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Set;
 
+import tools.Tools;
+
 public class Counter {
 	Set<Long> passed = new HashSet<Long>();
 	Set<Long> current = new HashSet<Long>();

@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import tools.Tools;
+
 public class StoreCredit {
 
 	public static void main(String[] args) throws IOException {

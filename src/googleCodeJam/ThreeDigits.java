@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import tools.Tools;
+
 public class ThreeDigits {
 	public static void main(String[] arg)throws IOException{
 		String inputFile = Tools.chooseFile();

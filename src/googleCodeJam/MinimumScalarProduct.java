@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import tools.Tools;
+
 public class MinimumScalarProduct {
 	public static void main(String[] args) throws IOException {
 		MinimumScalarProduct msp = new MinimumScalarProduct();

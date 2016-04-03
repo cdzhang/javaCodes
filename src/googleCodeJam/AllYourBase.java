@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class AllYourBase {
 	public static void main(String[] args) throws IOException {
 		AllYourBase ayb = new AllYourBase();

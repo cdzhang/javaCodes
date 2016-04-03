@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class AlienLanguage {
 	int L = 0;
 	int D = 0;

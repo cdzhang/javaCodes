@@ -1,5 +1,7 @@
 package practice;
 
+import tools.Tools;
+
 public class AddK {
 	int[] a = {1,2,3,5,10,100,20};
 	int K = 88;

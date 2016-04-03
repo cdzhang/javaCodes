@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class ChessBoard {
 	private int[][] chessBoard;
 	private LinkedList<int[]> cutRecord = new LinkedList<int[]>();

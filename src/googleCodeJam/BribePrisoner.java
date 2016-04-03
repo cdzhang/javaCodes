@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class BribePrisoner {
 	LinkedList<PQ> ch = new LinkedList<PQ>();
 	public static void main(String[] arg) throws IOException{

@@ -1,5 +1,7 @@
 package practice;
 
+import tools.Tools;
+
 public class Run {
 
 	int[] w = {2,1,3,2};

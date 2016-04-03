@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
+import tools.Tools;
+
 public class Pool {
 	double err = 1e-9;
 	LinkedList<Tap> taps = new LinkedList<Tap>();

@@ -1,7 +1,8 @@
-package codeJame2015;
+package tools;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
 
 import javax.swing.JFileChooser;
 
@@ -39,6 +40,14 @@ public class Tools {
 			a[n] = Long.parseLong(ss[n]);
 		return a;
 	}
+	public static double[] doubleArray(String s, String delimit){
+		String[] ss = s.split(delimit);
+		int N = ss.length;
+		double[] a = new double[N];
+		for(int n=0;n<N;n++)
+			a[n] = Double.parseDouble(ss[n]);
+		return a;
+	}
 	public static void print(Object o){
 		System.out.print(o.toString());
 	}
@@ -69,6 +78,28 @@ public class Tools {
 		}
 		println("]");
 	}
+	
+	public static void print(long[] N){
+		print("[");
+		for(long n:N){
+			print(n+",");
+		}
+		println("]");
+	}
+	public static void print(double[] d){
+		print("[");
+		for(double di:d){
+			print(di+",");
+		}
+		println("]");
+	}
+	public static <T> void print(LinkedList<T> t){
+		print("[");
+		for(T ti:t){
+			print(ti+",");
+		}
+		println("]");
+	}
 	public static long gcd(long a, long b){
 		long c = a % b;
 		if(c==0)
@@ -91,4 +122,27 @@ public class Tools {
 		int c = gcd(a,b);
 		return a * b / c;
 	}
+	public static long convert(String binary){
+		int L = binary.length();
+		long power = 1;
+		long r = 0;
+		for(int i=0;i<L;i++){
+			char c = binary.charAt(L-1-i);
+			if(c=='1'){
+				r += power;
+			}
+			power = power * 2;
+		}
+		return r;
+	}
+	public static long[] power2(int N){
+		long[] p = new long[N+1];
+		long value = 1;
+		for(int i=0;i<=N;i++){
+			p[i] = value;
+			value *= 2;
+		}
+		return p;
+	}
+
 }
