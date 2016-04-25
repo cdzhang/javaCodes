@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Random;
 
-import tools.Tools;
+import tools.TT;
 
 public class Charging {
 	long[] power2 = new long[42];
@@ -44,20 +44,20 @@ public class Charging {
 		}*/
 		String s1 = "1111111011011001011110001000001010001010100011100111101100000001";
 		String s2 = "1010001111110101001110011000111010101011111000000100000111000000";
-		long l1 = Tools.convert(s1);
-		long l2 = Tools.convert(s2);
-		Tools.println(l1+","+l2+":"+compare(l1,l2));
+		long l1 = TT.convert(s1);
+		long l2 = TT.convert(s2);
+		TT.println(l1+","+l2+":"+compare(l1,l2));
 	    
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		long startTime = System.currentTimeMillis();
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] nl = Tools.intArray(in.readLine(), " ");
+			int[] nl = TT.intArray(in.readLine(), " ");
 			N = nl[0];
 			L = nl[1];
 			String[] outletsS = in.readLine().split(" ");
@@ -65,15 +65,15 @@ public class Charging {
 			outlets = new long[N];
 			devices = new long[N];
 			for(int n=0;n<N;n++){
-				outlets[n] = Tools.convert(outletsS[n]);
-				devices[n] = Tools.convert(devicesS[n]);
+				outlets[n] = TT.convert(outletsS[n]);
+				devices[n] = TT.convert(devicesS[n]);
 			}
 			sortDevices();
 			//Tools.print(outlets);
 			//Tools.print(devices);
 			if(caseN==2){
 			    for(int i=0;i<N;i++){
-			    	Tools.println(Long.toBinaryString(devices[i]));
+			    	TT.println(Long.toBinaryString(devices[i]));
 			    }
 			}
 			//int re = switches(0);
@@ -86,7 +86,7 @@ public class Charging {
 		in.close();
 		out.close();
 		long endTime = System.currentTimeMillis();
-		Tools.println(endTime-startTime);
+		TT.println(endTime-startTime);
 	}
 	int switches(int i){
 		if(i>=L)

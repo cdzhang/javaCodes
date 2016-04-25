@@ -9,26 +9,27 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 
-import tools.Tools;
+import tools.TT;
 
 public class Albocede {
 	char[] S;
 	long mod = 1000000007;
-	Map<Integer,Long> values = new HashMap<Integer,Long>();
+	Map<Long,Long> values = new HashMap<Long,Long>();
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Albocede a = new Albocede();
-		//a.solve();
+		a.solve();
 		//a.test();
-		System.out.println(Integer.MAX_VALUE);
+		//System.out.println(Integer.MAX_VALUE);
 	}
 	public void test(){
-		int nbM = bMax(1,2);
-		System.out.println(nbM);
+		for(int i=0;i<=50;i++){
+			TT.println(i+":"+C(50,i));
+		}
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -58,13 +59,12 @@ public class Albocede {
         int Na = aI.size();
         if(Na==0)
         	return 0;
-        for(int aLastI=0;aLastI<Na;aLastI++){
+        fora:for(int aLastI=0;aLastI<Na;aLastI++){
         	int naM1 = Math.min(aLastI+1, naM);
-        	for(int na=1;na<=naM1;na++){
-        		//System.out.println("aLastI="+aLastI+",na="+na);
+        	forna:for(int na=1;na<=naM1;na++){
         		LinkedList<Integer> bI = findB(na,aI.get(aLastI)+1);
         		int Nb = bI.size();
-        		if(Nb==0) break;
+        		if(Nb==0) break forna;
         		int nbM = bMax(na,aI.get(aLastI)+1);
         		//System.out.println("nbM="+nbM);
         		for(int bLastI=0;bLastI<Nb;bLastI++){
@@ -73,11 +73,11 @@ public class Albocede {
         				//System.out.println("bLastI="+bLastI+",nb="+nb);
         				LinkedList<Integer> cI = findC(na,nb,bI.get(bLastI)+1);
         				int Nc = cI.size();
-        				if(Nc==0) break;
+        				if(Nc<na) break;
         				for(int cLastI=na-1;cLastI<cI.size();cLastI++){
         					LinkedList<Integer> dI = findD(nb,cI.get(cLastI)+1);
         					int Nd = dI.size();
-        					if(Nd==0) break;
+        					if(Nd<nb) break;
         					for(int dLastI=nb-1;dLastI<Nd;dLastI++){
             					long NA = C(aLastI,na-1);
             					long NB = C(bLastI,nb-1);
@@ -86,10 +86,11 @@ public class Albocede {
             					long NN = NA*NB%mod;
             					NN = NN*NC%mod;
             					NN = NN*ND%mod;
-            					NN = (NN + countN(dI.get(dLastI)+1)%mod)%mod;
-            					/*System.out.println("alast="+aLastI+",blast="+bLastI+",cLast="+cLastI
-            							+",dlast="+dLastI
-            							+",na="+na+",nb="+nb+",NN="+NN);*/
+            					long left = countN(dI.get(dLastI)+1)%mod;
+            					NN = (NN + NN*left%mod)%mod;
+            				//	Tools.println(aI.get(aLastI)+","+bI.get(bLastI)+","+cI.get(cLastI)+","
+            					//		+dI.get(dLastI)+":"+NN);
+            					
             					count = (count + NN) % mod;
         					}
         				}
@@ -97,7 +98,7 @@ public class Albocede {
         		}
         	}
         }
-        values.put(st,count);
+        values.put((long)st,count);
     	return count;
     }
     long C(int n,int k){

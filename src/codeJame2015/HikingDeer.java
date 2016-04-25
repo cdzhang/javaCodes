@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
-import tools.Tools;
+import tools.TT;
 
 public class HikingDeer {
 	double err = 1e-7;
@@ -23,8 +23,8 @@ public class HikingDeer {
 		long[][] a = new long[500000][3];
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -34,7 +34,7 @@ public class HikingDeer {
 			N = Integer.parseInt(in.readLine());
 			//hikers = new long[N][3];
 			for(int n=0;n<N;n++){
-				long[] g = Tools.longArray(in.readLine(), " ");
+				long[] g = TT.longArray(in.readLine(), " ");
 				//hikers[n][0] = g[0];
 				//hikers[n][1] = g[1];
 				//hikers[n][2] = g[2];

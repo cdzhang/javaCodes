@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Omino {
 	int X,R,C;
@@ -15,13 +15,13 @@ public class Omino {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] line = Tools.intArray(in.readLine(), " ");
+			int[] line = TT.intArray(in.readLine(), " ");
 			X = line[0];
 			R = line[1];
 			C = line[2];

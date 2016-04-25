@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import tools.Tools;
+import tools.TT;
 
 public class MinimumScalarProduct {
 	public static void main(String[] args) throws IOException {
@@ -18,8 +18,8 @@ public class MinimumScalarProduct {
 		
 	}
 	private void minimumScalar() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
     	BufferedReader in = new BufferedReader(new FileReader(inputFile));
     	PrintWriter out = new PrintWriter(outputFile);
     	int T = Integer.parseInt(in.readLine());//first line, cases

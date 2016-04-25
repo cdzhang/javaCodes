@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 
 public class Repeater {
@@ -19,8 +19,8 @@ public class Repeater {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -33,11 +33,11 @@ public class Repeater {
 				LinkedList<Char> chs = parseChar(ss[i]);
 
 				if(caseN==24){
-					Tools.println(ss[i]);
+					TT.println(ss[i]);
 						for(Char ch:chs){
-						Tools.print(ch.c+","+ch.n+" ");
+						TT.print(ch.c+","+ch.n+" ");
 					}
-					Tools.println();
+					TT.println();
 				}
 				charss.add(chs);
 			}

@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class GRanks {
 	LinkedList<Athlete> athletes = new LinkedList<Athlete>();
@@ -20,8 +20,8 @@ public class GRanks {
 		//System.out.println('T' - 'P');
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line

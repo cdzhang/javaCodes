@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class MagicTrick {
 	
@@ -14,9 +14,9 @@ public class MagicTrick {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -24,12 +24,12 @@ public class MagicTrick {
 			int a1 = Integer.parseInt(in.readLine())-1;
 			int[][] ar1 = new int[4][4];
 			for(int i=0;i<4;i++){
-				ar1[i] = Tools.intArray(in.readLine(), " ");
+				ar1[i] = TT.intArray(in.readLine(), " ");
 			}
 			int a2 = Integer.parseInt(in.readLine())-1;
 			int[][] ar2 = new int[4][4];
 			for(int i=0;i<4;i++){
-				ar2[i] = Tools.intArray(in.readLine(), " ");
+				ar2[i] = TT.intArray(in.readLine(), " ");
 			}
 			int[] cards1 = ar1[a1];
 			int[] cards2 = ar2[a2];
@@ -59,7 +59,7 @@ public class MagicTrick {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
 
 }

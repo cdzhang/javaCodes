@@ -9,13 +9,12 @@ import java.io.PrintWriter;
 public class Template {
 	
 	public static void main(String[] args) throws IOException {
-		Template t = new Template();
-		t.solve();
+		new Template().solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -30,7 +29,9 @@ public class Template {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
+
+	
 
 }

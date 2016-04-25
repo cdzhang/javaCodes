@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-import tools.Tools;
+import tools.TT;
 
 public class LogSet {
 	Map<Long,Long> map = new HashMap<Long,Long>();
@@ -20,17 +20,17 @@ public class LogSet {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
 			map.clear();
 			PI = Integer.parseInt(in.readLine());
-			E = Tools.longArray(in.readLine(), " ");
-			F = Tools.longArray(in.readLine(), " ");
+			E = TT.longArray(in.readLine(), " ");
+			F = TT.longArray(in.readLine(), " ");
 			long tN = 0;
 			for(long f:F){
 				tN+=f;
@@ -52,7 +52,7 @@ public class LogSet {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
 	String getSet(){
 		LinkedList<Long> set = new LinkedList<Long>();

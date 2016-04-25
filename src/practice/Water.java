@@ -2,14 +2,14 @@ package practice;
 
 import java.util.Scanner;
 
-import tools.Tools;
+import tools.TT;
 
 public class Water {
 	public static void main(String[] arg){
 		Water w = new Water();
 		Scanner user_input = new Scanner( System.in );
 		int i = 0;
-		Tools.println("input "+i+":");
+		TT.println("input "+i+":");
 		String x = user_input.next();
 		String[] s = new String[10];
 		s[i] = x;
@@ -23,7 +23,7 @@ public class Water {
 		user_input.close();
 		int R = s.length;
 		int C = s[0].length();
-		Tools.println("\n"+R+","+C);
+		TT.println("\n"+R+","+C);
 		char[][] field = new char[R][C];
 		for(int m=0;m<R;m++){
 			for(int n=0;n<C;n++){
@@ -33,7 +33,7 @@ public class Water {
 		for(String as:s){
 			System.out.println(as);
 		}
-		Tools.println(w.countPool(field));
+		TT.println(w.countPool(field));
 	}
 	public int countPool(char[][] field){
 		int R = field.length;

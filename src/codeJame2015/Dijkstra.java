@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Dijkstra {
 	int[][] table = {
@@ -23,13 +23,13 @@ public class Dijkstra {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			long[] LX = Tools.longArray(in.readLine(), " ");
+			long[] LX = TT.longArray(in.readLine(), " ");
 			L = (int)LX[0];
 			X = LX[1];
 			S = new int[L];

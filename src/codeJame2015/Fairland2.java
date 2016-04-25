@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class Fairland2 {
 	int N, D;
@@ -17,25 +17,25 @@ public class Fairland2 {
 	public static void main(String[] args) throws IOException {
 		Fairland2 t = new Fairland2();
 		t.solve();
-		Tools.println(Integer.MAX_VALUE);
+		TT.println(Integer.MAX_VALUE);
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] nd = Tools.intArray(in.readLine(), " ");
+			int[] nd = TT.intArray(in.readLine(), " ");
 			N = nd[0];
 			D = nd[1];
 			Em.D = D;
-			long[] line1 = Tools.longArray(in.readLine(), " ");
+			long[] line1 = TT.longArray(in.readLine(), " ");
 			long S0 = line1[0];
 			long As = line1[1];
 			long Cs = line1[2];
 			long Rs = line1[3];
-			long[] line2 = Tools.longArray(in.readLine(), " ");
+			long[] line2 = TT.longArray(in.readLine(), " ");
 			long M0 = line2[0];
 			long Am = line2[1];
 			long Cm = line2[2];

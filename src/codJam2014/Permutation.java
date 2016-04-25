@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
-import tools.Tools;
+import tools.TT;
 
 public class Permutation {
 	int[][] permGood;
@@ -67,14 +67,14 @@ public class Permutation {
 		//Tools.print(t.bad);
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
 			in.readLine();
-			int[] perm = Tools.intArray(in.readLine()," ");
+			int[] perm = TT.intArray(in.readLine()," ");
 			
 			String output = "Case #"+caseN + ": "+result(perm);
 			System.out.println(output);

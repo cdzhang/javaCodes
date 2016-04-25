@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import tools.Tools;
+import tools.TT;
 
 public class StoreCredit {
 
 	public static void main(String[] args) throws IOException {
 		StoreCredit s = new StoreCredit();
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		s.calculateCredits(inputFile,outputFile);
 	}
 	public void calculateCredits(String inputFile, String outputFile) throws IOException{

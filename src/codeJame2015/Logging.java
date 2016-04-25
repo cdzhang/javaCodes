@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class Logging {
 	int N;
@@ -17,11 +17,11 @@ public class Logging {
 	public static void main(String[] args) throws IOException {
 		Logging t = new Logging();
 		t.solve();
-		Tools.println(Math.asin(0.5)/2/Math.PI*360);
+		TT.println(Math.asin(0.5)/2/Math.PI*360);
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -30,7 +30,7 @@ public class Logging {
 			X = new int[N];
 			Y = new int[N];
 			for(int n=0;n<N;n++){
-				int[] xy = Tools.intArray(in.readLine()," ");
+				int[] xy = TT.intArray(in.readLine()," ");
 				X[n] = xy[0];
 				Y[n] = xy[1];
 			}

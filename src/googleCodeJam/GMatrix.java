@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class GMatrix {
 	LinkedList<E> matrix = new LinkedList<E>();
@@ -19,14 +19,14 @@ public class GMatrix {
 		//System.out.println(Integer.MAX_VALUE);
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
 			matrix.clear();
-			int[] NKCX = Tools.intArray(in.readLine()," ");
+			int[] NKCX = TT.intArray(in.readLine()," ");
 			N = NKCX[0];
 			K = NKCX[1];
 			C = NKCX[2];
@@ -37,8 +37,8 @@ public class GMatrix {
 					v[i][j] = false;
 				}
 			}*/
-			int[] A = Tools.intArray(in.readLine(), " ");
-			int[] B = Tools.intArray(in.readLine(), " ");
+			int[] A = TT.intArray(in.readLine(), " ");
+			int[] B = TT.intArray(in.readLine(), " ");
 			for(int i=1;i<=N;i++){
 				for(int j=1;j<=N;j++){
 					long x = (A[i-1]*i%X+B[j-1]*j%X+C)%X;
@@ -54,12 +54,11 @@ public class GMatrix {
 		out.close();
 	}
 	long getSum(){
-		int NN = N*N;
 		long sum = 0;
 		long countM = 0;
 		int totalM = (N-K+1)*(N-K+1);
-		for(int n=NN-1;n>=0;n--){
-			E e1 = matrix.get(n);
+		while(countM < totalM){
+			E e1 = matrix.getLast();
 			int imin = Math.max(1, e1.i-K+1);
 			int imax = Math.min(e1.i,N-K+1);
 			int jmin = Math.max(1,e1.j-K+1);
@@ -70,17 +69,14 @@ public class GMatrix {
 					if(!v[i-1][j-1]){
 						countn++;
 						v[i-1][j-1] = true;
-
 					}
 				}
 			}
 			sum += countn*e1.x;
 			countM += countn;
-			if(countM == totalM)
-				return sum;
-			
+			matrix.removeLast();
 		}
-		return 0;
+		return sum;
 	}
 	boolean hasLarger(int mi,int mj,int n){
 		int NN = N*N;

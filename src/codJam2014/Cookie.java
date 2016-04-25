@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import tools.Template;
-import tools.Tools;
+import tools.TT;
 
 public class Cookie {
 	
@@ -15,14 +15,14 @@ public class Cookie {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			double[] cfx = Tools.doubleArray(in.readLine(), " ");
+			double[] cfx = TT.doubleArray(in.readLine(), " ");
 			double C = cfx[0];
 			double F = cfx[1];
 			double X = cfx[2];
@@ -35,7 +35,7 @@ public class Cookie {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
 	double minTime(double C, double F, double X){
 		double rate = 2.0;

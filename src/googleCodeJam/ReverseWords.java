@@ -7,13 +7,13 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import tools.Tools;
+import tools.TT;
 
 public class ReverseWords{
 	public static void main(String[] args) throws IOException{
 		ReverseWords rw = new ReverseWords();
-        String input = Tools.chooseFile();
-        String output = Tools.getOutputName(input);
+        String input = TT.chooseFile();
+        String output = TT.getOutputName(input);
         rw.reverseWords(input,output);
 	}
     public void reverseWords(String inputFile, String outputFile) throws IOException{

@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class SumSum {
 	int N, Q;
@@ -17,20 +17,20 @@ public class SumSum {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] NQ = Tools.intArray(in.readLine(), " ");
+			int[] NQ = TT.intArray(in.readLine(), " ");
 			N = NQ[0];
 			Q = NQ[1];
-			array1 = Tools.intArray(in.readLine()," ");
+			array1 = TT.intArray(in.readLine()," ");
 			L = new int[Q];
 			R = new int[Q];
 			for(int q=0;q<Q;q++){
-				int[] lr = Tools.intArray(in.readLine(), " ");
+				int[] lr = TT.intArray(in.readLine(), " ");
 				L[q] = lr[0];
 				R[q] = lr[1];
 			}
@@ -56,7 +56,7 @@ public class SumSum {
 		}
 		Collections.sort(array);
 		int NN = array.size();
-		Tools.println(NN);
+		TT.println(NN);
 		long[] array2 = new long[NN];
 		long sum = 0;
 		for(int i=0;i<NN;i++){

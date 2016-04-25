@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.Stack;
 
-import tools.Tools;
+import tools.TT;
 
 public class Travelling {
 	Set<City> visited = new HashSet<City>();
@@ -26,8 +26,8 @@ public class Travelling {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -38,7 +38,7 @@ public class Travelling {
 			dead.clear();
 			route.clear();
 			count = 0;
-			int[] nm = Tools.intArray(in.readLine(), " ");
+			int[] nm = TT.intArray(in.readLine(), " ");
 			N = nm[0];
 			M = nm[1];
 			cities = new City[N+1];
@@ -47,7 +47,7 @@ public class Travelling {
 				cities[n] = new City(n,zip);
 			}
 			for(int m=1;m<=M;m++){
-				int[] rd = Tools.intArray(in.readLine()," ");
+				int[] rd = TT.intArray(in.readLine()," ");
 				int r1 = rd[0];
 				int r2 = rd[1];
 				City c1 = cities[r1];

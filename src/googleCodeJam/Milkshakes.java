@@ -6,12 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Milkshakes {
 	public static void main(String[] arg)throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		Milkshakes a = new Milkshakes();
 		a.milkShakesProcess(inputFile, outputFile);
 	}

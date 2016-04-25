@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Random {
 	long N,X,K,A,B,C;
@@ -16,16 +16,16 @@ public class Random {
 		Random t = new Random();
 		//t.solve();
 		int[] a = new int[(int) 1e10];
-		Tools.println(0.0/10);
+		TT.println(0.0/10);
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			long[] line = Tools.longArray(in.readLine(), " ");
+			long[] line = TT.longArray(in.readLine(), " ");
 			N = line[0];
 			X = line[1];
 			K = line[2];
@@ -58,7 +58,7 @@ public class Random {
 			//a = p[0][1][1] / (1 - p[1][1][1] + p[0][1][1]);
 			pn[1][1][1] = a + (p[1][1][1]-a)*Math.pow(p[1][1][1]-p[0][1][1], N-1);
 			if(caseN==28){
-			  Tools.println(a);
+			  TT.println(a);
 			  print();
 			}
 			String output = "Case #"+caseN + ": "+getMean();
@@ -90,7 +90,7 @@ public class Random {
 			p1i = p0*p011 + p1*p111;*/
 			p0i = p0*p010 + p1*p110;
 			p1i = p0*p011 + p1*p111;
-			Tools.println(i+","+p0i+","+p1i);
+			TT.println(i+","+p0i+","+p1i);
 		}
 	}
 	double getMean(){
@@ -124,6 +124,6 @@ public class Random {
 		return mean;
 	}
 	void print(){
-		Tools.println(pn[0][0][1]+","+pn[0][1][1]+","+pn[1][0][1]+","+pn[1][1][1]);
+		TT.println(pn[0][0][1]+","+pn[0][1][1]+","+pn[1][0][1]+","+pn[1][1][1]);
 	}
 }

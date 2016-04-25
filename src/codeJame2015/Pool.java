@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class Pool {
 	double err = 1e-9;
@@ -21,12 +21,12 @@ public class Pool {
 		double Rh=1e-4;
 		double Cc=57;
 		double Ch=97;
-		Tools.println((Ch+Cc)/2);
-		Tools.println((Ch*Rh+Cc*Rc)/(Rc+Rh));
+		TT.println((Ch+Cc)/2);
+		TT.println((Ch*Rh+Cc*Rc)/(Rc+Rh));
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -86,7 +86,7 @@ public class Pool {
 			double Rh = taps.get(hI).R;
 			double Ch = taps.get(hI).C;
 			double mx = ((1-copen)*Rc*Cc+(1-hopen)*Rh*Ch)/((1-copen)*Rc+(1-hopen)*Rh);
-			Tools.println("Rc="+Rc+",Rh="+Rh+"copen="+copen+",hopen="+hopen+ ",mx="+mx+",Cc="+Cc+",Ch="+Ch);
+			TT.println("Rc="+Rc+",Rh="+Rh+"copen="+copen+",hopen="+hopen+ ",mx="+mx+",Cc="+Cc+",Ch="+Ch);
 			if(Math.abs(mx-X)<=err){
 				speed += (1-hopen)*Rh + (1-copen)*Rc;
 				cI--;hI++; hopen=0;copen=0;

@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Haircut {
 	long B, N;
@@ -18,16 +18,16 @@ public class Haircut {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			long[] BN = Tools.longArray(in.readLine(), " ");
+			long[] BN = TT.longArray(in.readLine(), " ");
 			B = BN[0];
 			N = BN[1];
-			M = Tools.intArray(in.readLine(), " ");
+			M = TT.intArray(in.readLine(), " ");
 			String output = "Case #"+caseN + ": "+getBarbar();
 			System.out.println(output);
 			out.println(output);

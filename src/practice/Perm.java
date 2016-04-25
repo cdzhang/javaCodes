@@ -1,6 +1,6 @@
 package practice;
 
-import tools.Tools;
+import tools.TT;
 
 public class Perm {
 	int n = 5;
@@ -12,7 +12,7 @@ public class Perm {
 	}
 	void perm(int pos,int n){
 		if(pos==n){
-			Tools.print(perm1);
+			TT.print(perm1);
 			return;
 		}
 		for(int i=0;i<n;i++){

@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Drum {
 	long mod = 1000000007;
@@ -39,13 +39,13 @@ public class Drum {
 		}
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] rc = Tools.intArray(in.readLine(), " ");
+			int[] rc = TT.intArray(in.readLine(), " ");
 			long count = timesStart(rc[0],rc[1]);
 			String output = "Case #"+caseN + ": "+count;
 			System.out.println(output);
@@ -112,6 +112,6 @@ public class Drum {
 		return r;
 	}
 	int mul(int a, int b){
-		return Tools.mul(a, b);
+		return TT.mul(a, b);
 	}
 }

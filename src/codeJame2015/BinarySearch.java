@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class BinarySearch {
 	int[] cost;
@@ -17,14 +17,14 @@ public class BinarySearch {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			cost = Tools.intArray(in.readLine(), "");
+			cost = TT.intArray(in.readLine(), "");
 			int N = cost.length;
 			left = new long[N];
 			right = new long[N];
@@ -42,7 +42,7 @@ public class BinarySearch {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
 	long minCost(int i,int j){
 		if(record[i][j]!=0)

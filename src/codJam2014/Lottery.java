@@ -5,13 +5,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Lottery {
 	long[] power2;
 	long A, B,K;
 	Lottery(){
-		power2 = Tools.power2(30);
+		power2 = TT.power2(30);
 	}
 	public static void main(String[] args) throws IOException {
 		Lottery t = new Lottery();
@@ -19,16 +19,16 @@ public class Lottery {
 		t.A = 2;
 		t.B = 2;
 		t.K = 2;
-		Tools.println(t.countK(0, 0, 1, 1));
+		TT.println(t.countK(0, 0, 1, 1));
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			long[] line = Tools.longArray(in.readLine(), " ");
+			long[] line = TT.longArray(in.readLine(), " ");
 			A = line[0];
 			B = line[1];
 			K = line[2];

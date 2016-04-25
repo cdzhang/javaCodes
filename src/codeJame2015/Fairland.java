@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class Fairland {
 	int N, D;
@@ -17,25 +17,25 @@ public class Fairland {
 	public static void main(String[] args) throws IOException {
 		Fairland t = new Fairland();
 		t.solve();
-		Tools.println(Integer.MAX_VALUE);
+		TT.println(Integer.MAX_VALUE);
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
 			sorted.clear();
-			int[] nd = Tools.intArray(in.readLine(), " ");
+			int[] nd = TT.intArray(in.readLine(), " ");
 			N = nd[0];
 			D = nd[1];
-			long[] line1 = Tools.longArray(in.readLine(), " ");
+			long[] line1 = TT.longArray(in.readLine(), " ");
 			long S0 = line1[0];
 			long As = line1[1];
 			long Cs = line1[2];
 			long Rs = line1[3];
-			long[] line2 = Tools.longArray(in.readLine(), " ");
+			long[] line2 = TT.longArray(in.readLine(), " ");
 			long M0 = line2[0];
 			long Am = line2[1];
 			long Cm = line2[2];
@@ -66,11 +66,11 @@ public class Fairland {
 		out.close();
 	}
 	void printMap(Employee E){
-		Tools.print(E.id+"->");
+		TT.print(E.id+"->");
 		for(Employee Es:E.sbor){
-			Tools.print(Es.id+" ");
+			TT.print(Es.id+" ");
 		}
-		Tools.println();
+		TT.println();
 		for(Employee Es:E.sbor){
 			printMap(Es);
 		}

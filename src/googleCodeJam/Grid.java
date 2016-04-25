@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Grid {
 	int R,C,N;
@@ -15,13 +15,13 @@ public class Grid {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] RC = Tools.intArray(in.readLine(), " ");
+			int[] RC = TT.intArray(in.readLine(), " ");
 		    R = RC[0];
 			C = RC[1];
 			grid = new G[R][C];
@@ -97,20 +97,20 @@ public class Grid {
 	void printR(){
 		for(int r=0;r<R;r++){
 			for(int c=0;c<C;c++){
-				Tools.print(grid[r][c].r+" ");
+				TT.print(grid[r][c].r+" ");
 			}
-			Tools.println();
+			TT.println();
 		}
-		Tools.println("xxxxxxx");
+		TT.println("xxxxxxx");
 	}
 	void printX(){
 		for(int r=0;r<R;r++){
 			for(int c=0;c<C;c++){
-				Tools.print(grid[r][c].x+" ");
+				TT.print(grid[r][c].x+" ");
 			}
-			Tools.println();
+			TT.println();
 		}
-		Tools.println("__________");
+		TT.println("__________");
 	}
 }
 class G{

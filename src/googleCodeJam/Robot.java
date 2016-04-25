@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-import tools.Tools;
+import tools.TT;
 /*
  * because x^x = x^x, x^y=y^x
  * a^b^c^d = K <=>
@@ -20,26 +20,26 @@ public class Robot {
 	public static void main(String[] args) throws IOException {
 		Robot t = new Robot();
 		t.solve();
-		Tools.println(1^0);
-		Tools.println(2147483646^2140000001);
-		Tools.println(-2147483646^7483647);
-		Tools.println((-2147483646)^(-7483647));
-		Tools.println(Integer.MAX_VALUE);
+		TT.println(1^0);
+		TT.println(2147483646^2140000001);
+		TT.println(-2147483646^7483647);
+		TT.println((-2147483646)^(-7483647));
+		TT.println(Integer.MAX_VALUE);
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] NK = Tools.intArray(in.readLine(), " ");
+			int[] NK = TT.intArray(in.readLine(), " ");
 			N = NK[0];
 			K = NK[1];
-			A = Tools.intArray(in.readLine()," ");
-			B = Tools.intArray(in.readLine(), " ");
-			C = Tools.intArray(in.readLine()," ");
-			D = Tools.intArray(in.readLine()," ");
+			A = TT.intArray(in.readLine()," ");
+			B = TT.intArray(in.readLine(), " ");
+			C = TT.intArray(in.readLine()," ");
+			D = TT.intArray(in.readLine()," ");
 			String output = "Case #"+caseN + ": " +getNumber2();
 			System.out.println(output);
 			out.println(output);
@@ -86,7 +86,7 @@ public class Robot {
 					count +=  ccd;
 			}
 		}
-		Tools.println(System.currentTimeMillis()-startTime);
+		TT.println(System.currentTimeMillis()-startTime);
 		
 		/*for (Map.Entry<Long,Long> eAB : mAB.entrySet()) {
 			long ab = eAB.getKey();
@@ -98,7 +98,7 @@ public class Robot {
 			    	count += countAB*countCD;
 		    }
 		}*/
-		Tools.println(System.currentTimeMillis()-startTime);
+		TT.println(System.currentTimeMillis()-startTime);
 		
 		return count;
 	}

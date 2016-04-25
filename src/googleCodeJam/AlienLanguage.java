@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class AlienLanguage {
 	int L = 0;
@@ -14,8 +14,8 @@ public class AlienLanguage {
 	int N = 0;
 	LinkedList<String> dict = new LinkedList<String>();
 	public static void main(String[] arg) throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		AlienLanguage al = new AlienLanguage();
 		al.solve(inputFile, outputFile);
 	}

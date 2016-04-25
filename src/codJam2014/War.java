@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 import tools.Template;
-import tools.Tools;
+import tools.TT;
 
 public class War {
 	
@@ -17,16 +17,16 @@ public class War {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
 			int N = Integer.parseInt(in.readLine());
-			double[] naod = Tools.doubleArray(in.readLine()," ");
-			double[] kend = Tools.doubleArray(in.readLine()," ");
+			double[] naod = TT.doubleArray(in.readLine()," ");
+			double[] kend = TT.doubleArray(in.readLine()," ");
 			LinkedList<Double> nao1 = new LinkedList<Double>();
 			LinkedList<Double> nao2 = new LinkedList<Double>();
 			LinkedList<Double> ken1 = new LinkedList<Double>();
@@ -46,7 +46,7 @@ public class War {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
 	int warScore(LinkedList<Double> nao, LinkedList<Double> ken){
 		Collections.sort(nao);

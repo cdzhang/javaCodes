@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 
 public class Smooth {
@@ -15,16 +15,16 @@ public class Smooth {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] nk = Tools.intArray(in.readLine(), " ");
+			int[] nk = TT.intArray(in.readLine(), " ");
 			int N = nk[0];
 			int K = nk[1];
-			int[] sum = Tools.intArray(in.readLine()," ");
+			int[] sum = TT.intArray(in.readLine()," ");
 			String output = "Case #"+caseN + ": "+getD(K,N,sum);
 			System.out.println(output);
 			out.println(output);

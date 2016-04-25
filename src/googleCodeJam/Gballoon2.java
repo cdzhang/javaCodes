@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class Gballoon2 {
 	int N,M,Q;
@@ -17,21 +17,21 @@ public class Gballoon2 {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] NMQ = Tools.intArray(in.readLine(), " ");
+			int[] NMQ = TT.intArray(in.readLine(), " ");
 			N = NMQ[0];
 			M = NMQ[1];
 			Q = NMQ[2];
-			V = Tools.intArray(in.readLine(), " ");
+			V = TT.intArray(in.readLine(), " ");
 			balloons = new int[N][4];
 			for(int n=0;n<N;n++){
 				//Tools.println(n);
-				int[] line = Tools.intArray(in.readLine()," ");
+				int[] line = TT.intArray(in.readLine()," ");
 				//Tools.println(line[0]);
 				balloons[n][0] = line[0];
 				balloons[n][1] = line[1];

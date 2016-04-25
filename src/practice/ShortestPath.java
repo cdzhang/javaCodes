@@ -3,7 +3,7 @@ package practice;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import tools.Tools;
+import tools.TT;
 
 public class ShortestPath {
 	public static void main(String[] arg){
@@ -27,8 +27,8 @@ public class ShortestPath {
 			}
 		}
 		ShortestPath sh = new ShortestPath();
-		Tools.println(s);
-		Tools.println(sh.shortestPath(map));
+		TT.println(s);
+		TT.println(sh.shortestPath(map));
 	}
 	int shortestPath(char[][] map){
 		int[] dx = {1,0,-1,0};
@@ -73,7 +73,7 @@ public class ShortestPath {
 			for(int j=0;j<C;j++){
 				System.out.printf("%5d ",p[i][j]);
 			}
-			Tools.println();
+			TT.println();
 		}
 		return p[gx][gy];
 	}

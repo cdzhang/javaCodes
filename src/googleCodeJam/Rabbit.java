@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class Rabbit {
 	int G,W,H,B,X;
@@ -20,8 +20,8 @@ public class Rabbit {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -54,7 +54,7 @@ public class Rabbit {
 		}
 		int time = findNext(0);
 		if(time < 0){
-			Tools.println("here");
+			TT.println("here");
 			return -1;
 		}
 		long psDay = 0;
@@ -100,7 +100,7 @@ public class Rabbit {
 		//if(D!=1) return -2;
 		int time = findNext(0);
 		if(time < G){
-			Tools.println("D=1 start cannot");
+			TT.println("D=1 start cannot");
 			return -1;
 		}
 		long count = 1;
@@ -128,12 +128,12 @@ public class Rabbit {
 		return index;
 	}
 	int getTime(String s){
-		int[] a = Tools.intArray(s,":");
+		int[] a = TT.intArray(s,":");
 		return (3600*a[0] + 60*a[1] + a[2]);
 	}
 	int findNext(int ptime){//find next press time
 		if(ptime == 0 && X < G){
-			Tools.println("here");
+			TT.println("here");
 			return -1;//Day 0
 		}
 		int tentative = ptime + X;
@@ -233,7 +233,7 @@ class Time{
 	int time;
 	Time(){}
 	Time(String s){
-		int[] a = Tools.intArray(s,":");
+		int[] a = TT.intArray(s,":");
 		time = 3600*a[0] + 60*a[1] + a[2];
 	}
   }

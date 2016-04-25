@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Set;
 
-import tools.Tools;
+import tools.TT;
 
 public class Counter {
 	Set<Long> passed = new HashSet<Long>();
@@ -22,20 +22,20 @@ public class Counter {
 	void test(){
 
 		N = 1000;
-		Tools.println(minCount1());
+		TT.println(minCount1());
 		clear();
 		N = 1001;
-		Tools.println(minCount1());
+		TT.println(minCount1());
 		clear();
 		N = 1007;
-		Tools.println(minCount1());
+		TT.println(minCount1());
 		clear();
 		N = 1010;
-		Tools.println(minCount1());
+		TT.println(minCount1());
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -69,7 +69,7 @@ public class Counter {
 	long minCount(long n){
 		if(n<=20)
 			return n;
-		Tools.print(n+",");
+		TT.print(n+",");
 		long nr = reverse(n);
 		long n1 = n - 1;
 		if(nr >= n)

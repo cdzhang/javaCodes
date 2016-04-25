@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-import tools.Tools;
+import tools.TT;
 
 public class BinaryTree {
 	Node[] nodes;
@@ -20,11 +20,11 @@ public class BinaryTree {
 	void run(){
 		Map<Integer,Integer> map = new HashMap<Integer,Integer>();
 		map.put(null, 1);
-		Tools.println(map.get(null));
+		TT.println(map.get(null));
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -35,7 +35,7 @@ public class BinaryTree {
 				nodes[n] = new Node();
 			}
 			for(int n=1;n<=N-1;n++){
-				int[] l = Tools.intArray(in.readLine(), " ");
+				int[] l = TT.intArray(in.readLine(), " ");
 				Node n1 = nodes[l[0]];
 				Node n2 = nodes[l[1]];
 				n1.connected.add(n2);

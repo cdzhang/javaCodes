@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class Battleship {
 	public static void main(String[] args) throws IOException {
@@ -13,13 +13,13 @@ public class Battleship {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] rcw = Tools.intArray(in.readLine(), " ");
+			int[] rcw = TT.intArray(in.readLine(), " ");
 			int R = rcw[0];
 			int C = rcw[1];
 			int W = rcw[2];

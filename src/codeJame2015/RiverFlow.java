@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import tools.Tools;
+import tools.TT;
 
 public class RiverFlow {
 	public static void main(String[] args) throws IOException {
@@ -13,17 +13,17 @@ public class RiverFlow {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
-			int[] nd = Tools.intArray(in.readLine(), " ");
+			int[] nd = TT.intArray(in.readLine(), " ");
 			int N = nd[0];
 			int D = nd[1];
-			int[] d = Tools.intArray(in.readLine(), " ");
+			int[] d = TT.intArray(in.readLine(), " ");
 			int min = d[0];
 			int max = d[0];
 			for(int n=1;n<N;n++){
@@ -53,7 +53,7 @@ public class RiverFlow {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
 	int minFarmers(int[] d,int D){
 		int L = minPeriod(d,D);

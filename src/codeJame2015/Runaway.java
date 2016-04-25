@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
-import tools.Tools;
+import tools.TT;
 
 public class Runaway {
 	int Y, N;
@@ -22,9 +22,9 @@ public class Runaway {
 		t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
+		String inputFile = TT.chooseFile();
 		long startTime = System.currentTimeMillis();
-		String outputFile = Tools.getOutputName(inputFile);
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -32,11 +32,11 @@ public class Runaway {
 			left.clear();
 			right.clear();
 			caught.clear();
-			int[] yn = Tools.intArray(in.readLine()," ");
+			int[] yn = TT.intArray(in.readLine()," ");
 			Y = yn[0];
 			N = yn[1];
-			P = Tools.intArray(in.readLine(), " ");
-			V = Tools.intArray(in.readLine(), " ");
+			P = TT.intArray(in.readLine(), " ");
+			V = TT.intArray(in.readLine(), " ");
 			initLeftRight();
 			String output = "Case #"+caseN + ": "+getTime(0,0);
 			System.out.println(output);
@@ -45,7 +45,7 @@ public class Runaway {
 		in.close();
 		out.close();
 		long timeUsed = System.currentTimeMillis()-startTime;
-		Tools.println("total execution time is "+timeUsed);
+		TT.println("total execution time is "+timeUsed);
 	}
 	double getTime(double pos,double time){//at time time, I am position pos
 		if(caught.size() == N)

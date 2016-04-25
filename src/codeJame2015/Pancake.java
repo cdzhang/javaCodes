@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class Pancake {
 	int D;
@@ -16,14 +16,14 @@ public class Pancake {
 		//t.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
 		for(int caseN=1; caseN<=T;caseN++){
 			D = Integer.parseInt(in.readLine());
-			P = Tools.intArray(in.readLine(), " ");
+			P = TT.intArray(in.readLine(), " ");
 			String output = "Case #"+caseN + ": ";
 			System.out.println(output);
 			out.println(output);

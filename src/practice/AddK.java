@@ -1,6 +1,6 @@
 package practice;
 
-import tools.Tools;
+import tools.TT;
 
 public class AddK {
 	int[] a = {1,2,3,5,10,100,20};
@@ -8,7 +8,7 @@ public class AddK {
 	int n = a.length;
 	public static void main(String[] arg){
 		AddK ad = new AddK();
-		Tools.print(ad.canFind(0, 0));
+		TT.print(ad.canFind(0, 0));
 	}
 	boolean canFind(int i, int sum){
 		if(i==n-1) return sum==K;

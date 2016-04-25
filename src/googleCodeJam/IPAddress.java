@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class IPAddress {
 	int N;
@@ -19,25 +19,25 @@ public class IPAddress {
 		
 	}
 	public void test(){
-		Tools.println(Integer.toBinaryString(40));
-		Tools.println(Integer.toBinaryString(32));
+		TT.println(Integer.toBinaryString(40));
+		TT.println(Integer.toBinaryString(32));
 		for(int p=0;p<=8;p++){
-			Tools.println("p="+p+","+getNorm(128,p)+","+getNorm(2,p));
+			TT.println("p="+p+","+getNorm(128,p)+","+getNorm(2,p));
 		}
-		Tools.println(getNorm(32,5)+","+getNorm(40,5));
+		TT.println(getNorm(32,5)+","+getNorm(40,5));
 		int[] ip1 ={10,2,3,4};
 		int[] ip2 ={10,128,2,3}; 
 		ip1 = getNorm(ip1,9);
 		ip2 = getNorm(ip2,9);
-		Tools.print(ip1);;
-		Tools.print(ip2);;
+		TT.print(ip1);;
+		TT.print(ip2);;
 		IP i1 = new IP(ip1,9);
 		IP i2 = new IP(ip2,9);
-		Tools.println(i1.contain(i2));
+		TT.println(i1.contain(i2));
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int T = Integer.parseInt(in.readLine());//first line
@@ -46,7 +46,7 @@ public class IPAddress {
 			N = Integer.parseInt(in.readLine());
 			for(int n=0;n<N;n++){
 				String[] s = in.readLine().split("/");
-				int[] ip = Tools.intArray(s[0], "\\.");
+				int[] ip = TT.intArray(s[0], "\\.");
 				int prefix = Integer.parseInt(s[1]);
 				ip = getNorm(ip,prefix);
 				IP aIP = new IP(ip,prefix);

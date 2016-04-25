@@ -1,11 +1,11 @@
 package practice;
 
-import tools.Tools;
+import tools.TT;
 
 public class Dict {
 	public static void main(String[] args){
 		Dict d = new Dict();
-		Tools.println(d.getT("ACDBCADDFEBDIEAFDKB"));
+		TT.println(d.getT("ACDBCADDFEBDIEAFDKB"));
 	}
 	String getT(String S){
 		int L = S.length();

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
-import tools.Tools;
+import tools.TT;
 
 public class FileFixIt {
 	String name; //the name of this directory
@@ -29,8 +29,8 @@ public class FileFixIt {
 		f.solve();
 	}
 	public void solve() throws IOException{
-		String inputFile = Tools.chooseFile();
-		String outputFile = Tools.getOutputName(inputFile);
+		String inputFile = TT.chooseFile();
+		String outputFile = TT.getOutputName(inputFile);
 		BufferedReader in = new BufferedReader(new FileReader(inputFile));
 		PrintWriter out = new PrintWriter(outputFile);
 		int totalCasesNumber = Integer.parseInt(in.readLine());//first line
