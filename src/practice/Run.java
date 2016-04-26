@@ -13,10 +13,20 @@ public class Run {
 	public static void main(String[] arg){
 		Run r = new Run();
 		r.test();
+		TT.println(3600*24*2e-11*1e-4);
 	}
 	void test(){
-		TT.println(Puzzle(15,24));
-		TT.println(Puzzle(16,17));
+		densityDependent();
+	}
+	void densityDependent(){
+		double dm = 0.001;
+		for(double m = 0;m<1;m+=dm){
+			TT.println(m+"\t"+Math.pow(m/(1-m),4));
+		}
+	}
+	double time(double G){
+		double mu = 0.08*G/(0.0072+G);
+		return 1/mu;
 	}
     public static int Puzzle(int lowerBound, int upperBound) {
         int m = 1;
