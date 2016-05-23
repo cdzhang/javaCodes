@@ -16,7 +16,12 @@ public class Run {
 		TT.println(3600*24*2e-11*1e-4);
 	}
 	void test(){
-		densityDependent();
+		long a = 1232;
+		long b = 573;
+		long z = 1;
+		long[] xy = TT.exgcd(a,b,z);
+		if(xy!=null)
+			TT.print(xy);
 	}
 	void densityDependent(){
 		double dm = 0.001;

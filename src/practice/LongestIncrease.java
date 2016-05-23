@@ -3,10 +3,6 @@ package practice;
 import tools.TT;
 
 public class LongestIncrease {
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		int[] a = {4,2,3,1,5};
 		TT.println(new LongestIncrease().longest(a));

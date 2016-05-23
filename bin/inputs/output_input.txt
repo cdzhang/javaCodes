@@ -1,2 +1,10 @@
-Case #1: pajamas caravan
-Case #2: garlic
+Case #1: POSSIBLE
+0 0 1 1 1
+0 0 0 0 0
+0 0 0 1 1
+0 0 0 0 1
+0 0 0 0 0
+Case #2: POSSIBLE
+0 1
+0 0
+Case #3: IMPOSSIBLE

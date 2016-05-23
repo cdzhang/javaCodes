@@ -32,7 +32,14 @@ public class Int extends BigInteger {
 		int N = s.length();
 		for(int i=N-1;i>=0;i--){
 			char ci = s.charAt(i);
-			value = value.add(new Int(ci+"").multiply(power));
+			int ii = ci - '0';
+			Int Ii;
+			if(base>10){
+				if(!(ci>=0 && ci <=9))
+					ii = ci - 'a' + 10;
+			}
+			Ii = new Int(ii);
+			value = value.add(Ii.multiply(power));
 			power = power.multiply(base);
 		}
 		return value;

@@ -1,3 +1,2 @@
-Case #1: 2 1 4 3
-Case #2: 1 2 3
-Case #3: IMPOSSIBLE
+Case #1: NO
+Case #2: NO

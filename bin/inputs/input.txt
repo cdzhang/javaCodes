@@ -1,13 +1,5 @@
-2
-3 2
-banana
-caravan
-pajamas
-abcdefghijklmnopqrstuvwxyz
-etaoisnhrdlcumwfgypbvkjxqz
-4 1
-potato
-tomato
-garlic
-pepper
-zyxwvutsrqponmlkjihgfedcba
+4
+111
+1111
+1111111
+1111119

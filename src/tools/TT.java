@@ -125,6 +125,16 @@ public class TT {
 		else
 			return gcd(b,c);
 	}
+	public static long[] exgcd(long a,long b,long z){
+		if(z==0) return null;
+		if(a==0)
+			return z%b==0?new long[]{0,z/b}:null;
+		if(b==0)
+			return z%a==0?new long[]{z/a,0}:null;
+		long[] xy1 = exgcd(b,a%b,z);
+		if(xy1==null) return null;
+		return new long[]{xy1[1],xy1[0]-a/b*xy1[1]};
+	}
 	public static long C(long n,long k){
     	if(k==0) return 1;
     	if(2*k > n)
@@ -271,6 +281,5 @@ public class TT {
 			return false;
 		}
 	}
-
 
 }
